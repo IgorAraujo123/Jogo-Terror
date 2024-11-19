@@ -28,6 +28,4 @@ Regras:Deve possuir chave correspondente para cada porta,chaves so podem ser obt
 Jogabilidade: O jogador deve resolver os enigmas para desbloquear as chaves para chegar ao seu objetivo que e o porão
 
 # Demo do Jogo por Vídeo
-Grave um vídeo de no máximo 5 minutos demonstrando o jogo.
-Mostre as principais funcionalidades e a jogabilidade.
-Certifique-se de que o vídeo está claro e fácil de entender.
+link do video
