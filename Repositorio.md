@@ -1,15 +1,17 @@
 # Jogo-Terror
 Trabalho kadija
 
-# Historia 
+# História
 
-O personagem acorda em sua cama apos uma longa noite mal dormida. Olha para os lado meio desorientado tentado reconhece o local em que ser encontra.
+O personagem acorda em sua cama após uma longa noite mal dormida. Olha ao redor, meio desorientado, tentando reconhecer o local em que se encontra.
 
-Ao acorda chamar pela sua mãe e Pai, apo um longo e ensurdecedor silencio ninguém responde, é percebe-se que esta sozinho(a) em casa, mas por algum motivo ser sentir  aungustiado e que a algo lhe abiservando.
+Ao despertar, chama por sua mãe e pai, mas, após um longo e ensurdecedor silêncio, ninguém responde. Ele(a) percebe que está sozinho(a) em casa, mas, por algum motivo, sente-se angustiado(a), como se algo o(a) estivesse observando.
 
-Então resolve sair o mais rapido povivel de casa, indo em direçao a porta tenta abrir e força a abretura mas ela esta trancada. Sem saber o que fazer lembra que seus pais gostam muito de Enigmas e puzzle, Então tenta busca por alguma pista de onde possivelmente eles possam ter Escondido a chave de casa.
+Decide sair de casa o mais rápido possível. Ao ir em direção à porta, tenta abri-la e força a abertura, mas percebe que está trancada. Sem saber o que fazer, lembra que seus pais adoram enigmas e quebra-cabeças. Então, começa a procurar pistas de onde eles poderiam ter escondido a chave de casa.
 
-Apos ter encontrado a chave da porta da frente no porão de sua casa escuta um barulho e fica muito assustada(o), nervosa(o) e com medo. Do que poder ter causado este barulho e então a luz da casa ACABA e O Personagem fica no breu completo. Com apenas um forforo e um esqueiro no seu bolso, ele/ela tenta deseperadamente ligar enquando o barulho fica cada vez mais alto.
+Após encontrar a chave da porta da frente no porão, escuta um barulho e fica muito assustado(a), nervoso(a) e com medo do que pode ter causado o som. De repente, a luz da casa se apaga, e o personagem fica no breu completo.
+
+Com apenas uma lanterna e um isqueiro no bolso, ele(a) tenta desesperadamente iluminar o ambiente, enquanto o barulho se torna cada vez mais alto.
 
 
 link Inclua o link do repositório no documento de submissão.
@@ -33,14 +35,18 @@ C#
 Itch.io
 
 # Identificação da Complexidade do Jogo
-Detecçao de distancia entre dois objetos,checagem de situaçoes correspondentes,criaçao de puzzles,resolver puzzle.
+Detecção de distância entre dois objetos, checagem de situações correspondentes, criação de puzzles e resolução de puzzles.
 
-A complexidade foi resolvida atraves de variaveis,funçoes ,loop de interação ,objetos e funçoes nativas da unity,estruturas condicionais 
+A complexidade foi abordada utilizando variáveis, funções, loops de interação, objetos e funções nativas do Unity, além de estruturas condicionais.
 
-# Regras (Jogabilidade)
-Regras : Deve possuir chave correspondente para cada porta,chaves so podem ser obtidas atraves de puzzles 
+# Regras e Jogabilidade
+Regras
 
-Jogabilidade : O jogador deve resolver os enigmas para desbloquear as chaves para chegar ao seu objetivo que e o porão
+Cada porta deve possuir uma chave correspondente.
+As chaves só podem ser obtidas ao resolver os puzzles propostos.
+Jogabilidade
+
+O jogador deve resolver os enigmas para desbloquear as chaves necessárias e alcançar o objetivo principal: o porão.
 
 # Demo do Jogo por Vídeo
 link do video
