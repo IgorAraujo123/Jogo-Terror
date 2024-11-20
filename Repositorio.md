@@ -1,6 +1,8 @@
 # Jogo-Terror
 Trabalho kadija
 
+Link do Repositorio : https://docs.google.com/document/d/1PrrAdx-OnICCWeQ1nbCfR8MgBROGx4Wt/edit?usp=sharing&ouid=116900395550097482389&rtpof=true&sd=true
+
 # História
 
 O personagem acorda em sua cama após uma longa noite mal dormida. Olha ao redor, meio desorientado, tentando reconhecer o local em que se encontra.
@@ -14,7 +16,6 @@ Após encontrar a chave da porta da frente no porão, escuta um barulho e fica m
 Com apenas uma lanterna e um isqueiro no bolso, ele(a) tenta desesperadamente iluminar o ambiente, enquanto o barulho se torna cada vez mais alto.
 
 
-link Inclua o link do repositório no documento de submissão.
 
 # Checklist do Desenvolvimento do Jogo
 Definição do Tema: Terror,estilo puzzle(treino de habilidades manuais, perceção visual bem como capacidades cognitivas responsáveis pela organização e estratégia do processo de encaixar).
