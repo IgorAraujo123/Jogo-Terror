@@ -21,7 +21,7 @@ public class Interations : MonoBehaviour
     [SerializeField] private Sprite newSpriteFalha;
     [SerializeField] private string newTxtFalha;
 
-    [Header("Trocar texto e sprite caso não possuir um item")]
+    [Header("Trocar texto e sprite caso possuir um item")]
     [SerializeField] private Sprite newSpriteSucesso;
     [SerializeField] private string newTxtSucesso;
 
