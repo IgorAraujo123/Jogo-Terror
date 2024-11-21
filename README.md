@@ -51,3 +51,5 @@ O jogador deve resolver os enigmas para desbloquear as chaves necessárias e alc
 
 # Demo do Jogo por Vídeo
 link do video
+
+# Documentation
