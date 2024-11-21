@@ -52,7 +52,7 @@ public class Interations : MonoBehaviour
             {
                 float distance = Vector3.Distance(transform.position, interection.transform.position);
 
-                if (distance < 2f)
+                if (distance < 1.5f)
                 {
                     // A posição do Canvas será ajustada para um ponto acima do objeto
                     Vector2 targetPosition = new Vector2(interection.transform.position.x, interection.transform.position.y + 1.5f);
