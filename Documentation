@@ -1,0 +1,5 @@
+private void Interation() - Verifica se o personagem está perto de um determinado objeto. Se estiver perto aparece um canvas se pressionar a tecla F equanto o canvas estiver ativo acontecera alguma ação de acordo com a 
+função verifyTypeTag(string tag, GameObject interection)
+
+private void verifyTypeTag(string tag, GameObject interection) - verfica a tag de um objeto. Se a tag for item ele adicionara a uma lista de itens, destruira o objeto e fechara o canvas, Se a tag for Doors vai verificar se 
+o personagem principal possui o item correspodente há essa door
