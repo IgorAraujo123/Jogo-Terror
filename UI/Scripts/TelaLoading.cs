@@ -10,7 +10,7 @@ public class TelaLoading : MonoBehaviour
     [SerializeField] private TextMeshProUGUI txtPorcetagem;
 
     void Start()
-    {        
+    {
         StartCoroutine(LoadScene());
     }
 
