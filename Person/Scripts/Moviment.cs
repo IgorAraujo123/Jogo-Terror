@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 
 public class Moviment : MonoBehaviour
 {
     private Animator anim;
-    [SerializeField]
-    private float velocity;
+    [SerializeField] private float velocity;
+    [SerializeField] private Rigidbody2D rb;
   
     void Start() {
         anim = GetComponent<Animator>();
@@ -22,7 +23,12 @@ public class Moviment : MonoBehaviour
         anim.SetFloat("Vertical", movimento.y);
         anim.SetFloat("Speed", movimento.magnitude);
 
-        transform.Translate(movimento * Time.deltaTime * velocity);
+        //transform.Translate(movimento * Time.deltaTime * velocity);
+        rb.linearVelocity = movimento * velocity;
     }
-    
+
+    private Vector2 Vector2(float x, float y)
+    {
+        throw new NotImplementedException();
+    }
 }

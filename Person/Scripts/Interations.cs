@@ -1,31 +1,29 @@
 using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using TMPro;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class Interations : MonoBehaviour
 {
     [Header("Game Objects que vai interagir com personagem principal")]
     [SerializeField] private List<GameObject> objetosInteracoes = new List<GameObject>();
+    [SerializeField] private List<GameObject> objetosInteracoes2 = new List<GameObject>();
 
-    [SerializeField] private List<string> itens = new List<string>();  
+    [SerializeField] private List<string> itens = new List<string>();
 
     [Header("Canvas que vai aparecer para pegar item")]
     [SerializeField] private Canvas canvas;
 
-    [Header("Sprite e Texto Original")]
+    [Header("Trocar texto e sprite caso não possuir um item, \n tempoEsperaInvoke vai ser o tempo que vai ficar o novo texto \n e imagem")]
+    [SerializeField] private Sprite newSprite;
     [SerializeField] private Sprite originalSprite;
     [SerializeField] private string originalTxt;
-
-    [Header("Trocar texto e sprite caso não possuir um item")]
-    [SerializeField] private Sprite newSpriteFalha;
-    [SerializeField] private string newTxtFalha;
-
-    [Header("Trocar texto e sprite caso possuir um item")]
-    [SerializeField] private Sprite newSpriteSucesso;
-    [SerializeField] private string newTxtSucesso;
-
-    [Header("tempoEsperaInvoke vai ser o tempo que vai ficar o novo texto e imagem")]
+    [SerializeField] private string newTxt;
     [SerializeField] private float tempoEsperaInvoke;
 
     [Header("Texto e sprite que vai sofrer alteração")]
@@ -39,10 +37,12 @@ public class Interations : MonoBehaviour
 
     void Update()
     {
-        Interation();
+        InterationKeys();
+        InterationDoor();
+        VerifyDoor();
     }
 
-    private void Interation()
+    private void InterationKeys()
     {
         if (objetosInteracoes.Count >= 1)
         {
@@ -52,7 +52,7 @@ public class Interations : MonoBehaviour
             {
                 float distance = Vector3.Distance(transform.position, interection.transform.position);
 
-                if (distance < 1.5f)
+                if (distance < 1f)
                 {
                     // A posição do Canvas será ajustada para um ponto acima do objeto
                     Vector2 targetPosition = new Vector2(interection.transform.position.x, interection.transform.position.y + 1.5f);
@@ -63,12 +63,51 @@ public class Interations : MonoBehaviour
 
                     isCanvasActive = true; // Marca que o Canvas deve estar ativo
 
-                    // Se a tecla F for pressionada, o item chamara a função verifyTypeTag(string tag, GameObject interection)
+                    // Se a tecla F for pressionada, o item é adicionado e o objeto é destruído
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        verifyTypeTag(interection.tag, interection);
+                        return;
+                    }
+                    
+                }
+            }
+
+            // Se a distância de todos os objetos for maior que 2, desativa o Canvas
+            if (!isCanvasActive)
+            {
+                canvas.enabled = false;
+            }
+        }
+    }
+    private void InterationDoor()
+    {
+        if (objetosInteracoes2.Count >= 1)
+        {
+            bool isCanvasActive = false;  // Variável para controlar o estado do Canvas
+
+            foreach (GameObject interection in objetosInteracoes2)
+            {
+                float distance = Vector3.Distance(transform.position, interection.transform.position);
+
+                if (distance < 1f)
+                {
+                    // A posição do Canvas será ajustada para um ponto acima do objeto
+                    Vector2 targetPosition = new Vector2(interection.transform.position.x, interection.transform.position.y + 1.5f);
+
+                    // Atualiza a posição do Canvas e torna ele visível
+                    canvas.transform.position = targetPosition;
+                    canvas.enabled = true;
+
+                    isCanvasActive = true; // Marca que o Canvas deve estar ativo
+
+                    // Se a tecla F for pressionada, o item é adicionado e o objeto é destruído
                     if (Input.GetKeyDown(KeyCode.F))
                     {
                         verifyTypeTag(interection.tag, interection);
                         return;
                     }
+
                 }
             }
 
@@ -80,7 +119,14 @@ public class Interations : MonoBehaviour
         }
     }
 
-    private void verifyTypeTag(string tag, GameObject interection){
+
+    public void OnTriggerEnter2D()
+    {
+        SceneManager.LoadScene("Fase 2"); 
+    }
+
+    protected void verifyTypeTag(string tag, GameObject interection)
+    {
         switch (tag)
         {
             case "Item":
@@ -90,20 +136,34 @@ public class Interations : MonoBehaviour
                 canvas.enabled = false; // Desativa o Canvas após a interação
                 return;
             case "Doors":
-                if(itens.Contains(interection.name.Replace("door", "key"))){
-                    image.sprite = newSpriteSucesso;
-                    textMeshPro.text = newTxtSucesso;
-                    Invoke("VoltarAoSpriteOriginal", tempoEsperaInvoke);  
-                }else{
-                    image.sprite = newSpriteFalha;
-                    textMeshPro.text = newTxtFalha; 
-                    Invoke("VoltarAoSpriteOriginal", tempoEsperaInvoke);       
+                
+                if (itens.Contains(interection.name.Replace("door", "key")))
+                {
+                    Destroy(interection);
+                    objetosInteracoes.Remove(interection);
+                    canvas.enabled = false;
+                    
+                }
+                else
+                {
+                    image.sprite = newSprite;
+                    textMeshPro.text = newTxt;
+                    Invoke("VoltarAoSpriteOriginal", tempoEsperaInvoke);
                 }
                 return;
             default:
                 return;
         }
     }
+
+    private void VerifyDoor()
+    {
+        if (Input.GetKeyDown(KeyCode.F) && objetosInteracoes.Count == 0)
+        {
+            SceneManager.LoadScene("Fase 2");
+        }
+    }
+       
 
     private void VoltarAoSpriteOriginal()
     {
@@ -112,4 +172,3 @@ public class Interations : MonoBehaviour
         textMeshPro.text = originalTxt;
     }
 }
-
