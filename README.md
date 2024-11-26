@@ -1,7 +1,15 @@
 # Jogo-Terror
-Trabalho kadija
+Trabalho de Computabilidade e Complexidade de Algoritmos dos alunos do 6° Semestre de Ciência da Computação 
 
 Link do Repositorio : https://docs.google.com/document/d/1PrrAdx-OnICCWeQ1nbCfR8MgBROGx4Wt/edit?usp=sharing&ouid=116900395550097482389&rtpof=true&sd=true
+
+# Integrantes
+
+RAIEL
+
+IGOR NUNES
+
+IGOR MIRANDA
 
 # História
 
